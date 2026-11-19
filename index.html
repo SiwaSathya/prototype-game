@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+        <title>
+            Petualangan Matematika Ceria - Game Edukasi SD Kelas 1 By Sathya
+        </title>
+        <!-- Google Fonts for Friendly Child-Friendly Typography -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700;800&family=Quicksand:wght@600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+    <body>
+        <!-- Floating Sky Clouds for whimsical backdrop -->
+        <div class="sky-background">
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+        </div>
+
+        <!-- Main Container -->
+        <div class="app-wrapper">
+            <!-- Top Navigation & Status Bar -->
+            <header class="top-nav-bar">
+                <div class="brand-badge">
+                    <span class="brand-icon">🏝️</span>
+                    <span class="brand-title">Pulau Angka Ajaib</span>
+                </div>
+
+                <div class="top-controls-group">
+                    <!-- Stars Counter -->
+                    <div
+                        class="star-badge-btn"
+                        id="star-tracker"
+                        title="Total Bintang Kamu"
+                    >
+                        <span class="star-icon">⭐</span>
+                        <span id="top-star-count" class="star-count">0</span>
+                    </div>
+
+                    <!-- Sticker Book Quick Access -->
+                    <button
+                        class="nav-icon-btn"
+                        id="open-sticker-btn"
+                        title="Buku Koleksi Stiker"
+                    >
+                        📖 <span class="btn-text-desktop">Stiker</span>
+                    </button>
+
+                    <!-- Sound and Music Toggles -->
+                    <div class="audio-controls">
+                        <button
+                            class="nav-mini-btn"
+                            id="toggle-sound-btn"
+                            title="Efek Suara"
+                        >
+                            🔊 Efek
+                        </button>
+                        <button
+                            class="nav-mini-btn"
+                            id="toggle-music-btn"
+                            title="Musik Latar"
+                        >
+                            🎵 Musik
+                        </button>
+                        <button
+                            class="nav-mini-btn"
+                            id="toggle-voice-btn"
+                            title="Suara Bicara"
+                        >
+                            🗣️ Suara
+                        </button>
+                    </div>
+
+                    <!-- Guide Info -->
+                    <button
+                        class="nav-icon-btn info-btn"
+                        id="info-guide-btn"
+                        title="Panduan Orang Tua & Guru"
+                    >
+                        💡
+                    </button>
+                </div>
+            </header>
+
+            <!-- Main Menu View: Island Map Selection -->
+            <main id="main-menu-view" class="main-menu-section">
+                <div class="hero-welcome-card">
+                    <div class="welcome-mascots">
+                        <div
+                            class="welcome-avatar-item"
+                            id="welcome-bunny"
+                        ></div>
+                        <div
+                            class="welcome-avatar-item"
+                            id="welcome-dino"
+                        ></div>
+                    </div>
+                    <div class="welcome-text">
+                        <h1 class="welcome-title">Halo Sahabat Cilik! 👋</h1>
+                        <p class="welcome-subtitle">
+                            Ayo berpetualang dan bermain matematika seru bersama
+                            Dino & Kiki!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Difficulty Selector -->
+                <div class="difficulty-bar">
+                    <span class="diff-label">Tingkat Kesulitan:</span>
+                    <div class="diff-buttons-group">
+                        <button class="diff-btn active" data-level="1">
+                            🌱 Mudah (1 - 5)
+                        </button>
+                        <button class="diff-btn" data-level="2">
+                            ⭐ Sedang (1 - 10)
+                        </button>
+                        <button class="diff-btn" data-level="3">
+                            🚀 Hebat (1 - 20)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Adventure Game Modes Grid -->
+                <div class="modes-grid">
+                    <!-- Mode 1: Counting -->
+                    <div class="mode-card card-counting" data-mode="counting">
+                        <div class="card-icon-pill">🍎</div>
+                        <div class="card-content">
+                            <h2 class="card-title">Pesta Kebun Buah</h2>
+                            <p class="card-desc">
+                                Petik buah manis dan hitung ke dalam keranjang &
+                                kotak sepuluh!
+                            </p>
+                            <span class="card-tag">Belajar Berhitung 1-20</span>
+                        </div>
+                        <div class="card-play-arrow">▶</div>
+                    </div>
+
+                    <!-- Mode 2: Addition -->
+                    <div class="mode-card card-addition" data-mode="addition">
+                        <div class="card-icon-pill">🍩</div>
+                        <div class="card-content">
+                            <h2 class="card-title">Dapur Donat Dino</h2>
+                            <p class="card-desc">
+                                Gabungkan piring donat lezat dan temukan jumlah
+                                semuanya!
+                            </p>
+                            <span class="card-tag">Konsep Penjumlahan (+)</span>
+                        </div>
+                        <div class="card-play-arrow">▶</div>
+                    </div>
+
+                    <!-- Mode 3: Subtraction -->
+                    <div
+                        class="mode-card card-subtraction"
+                        data-mode="subtraction"
+                    >
+                        <div class="card-icon-pill">🦖</div>
+                        <div class="card-content">
+                            <h2 class="card-title">Dino Yum-Yum Lapar</h2>
+                            <p class="card-desc">
+                                Suapi Dino yang lapar dengan kue lezat, lalu
+                                hitung sisanya!
+                            </p>
+                            <span class="card-tag">Konsep Pengurangan (-)</span>
+                        </div>
+                        <div class="card-play-arrow">▶</div>
+                    </div>
+
+                    <!-- Mode 4: Comparison -->
+                    <div
+                        class="mode-card card-comparison"
+                        data-mode="comparison"
+                    >
+                        <div class="card-icon-pill">🐊</div>
+                        <div class="card-content">
+                            <h2 class="card-title">Buaya Owi si Rakus</h2>
+                            <p class="card-desc">
+                                Bantu Buaya Owi mencaplok piring dengan makanan
+                                lebih banyak!
+                            </p>
+                            <span class="card-tag"
+                                >Lebih Besar & Kecil (> < =)</span
+                            >
+                        </div>
+                        <div class="card-play-arrow">▶</div>
+                    </div>
+
+                    <!-- Mode 5: Shapes & Patterns -->
+                    <div class="mode-card card-shapes" data-mode="shapes">
+                        <div class="card-icon-pill">🔺</div>
+                        <div class="card-content">
+                            <h2 class="card-title">Taman Bentuk & Pola</h2>
+                            <p class="card-desc">
+                                Pasangkan bentuk geometri ceria dan tebak
+                                kelanjutan polanya!
+                            </p>
+                            <span class="card-tag">Geometri & Pola Logika</span>
+                        </div>
+                        <div class="card-play-arrow">▶</div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Active Game View -->
+            <section
+                id="game-play-view"
+                class="game-play-section"
+                style="display: none"
+            >
+                <div class="game-header-bar">
+                    <button class="back-btn" id="back-to-menu-btn">
+                        ⬅️ Menu Pilihan
+                    </button>
+                </div>
+
+                <div id="game-active-container">
+                    <!-- Dynamic mode views will be inserted here -->
+                </div>
+            </section>
+        </div>
+
+        <!-- Scripts -->
+        <script src="js/audio.js"></script>
+        <script src="js/mascot.js"></script>
+        <script src="js/items.js"></script>
+        <script src="js/stickers.js"></script>
+        <script src="js/confetti.js"></script>
+        <script src="js/modes/counting.js"></script>
+        <script src="js/modes/addition.js"></script>
+        <script src="js/modes/subtraction.js"></script>
+        <script src="js/modes/comparison.js"></script>
+        <script src="js/modes/shapes.js"></script>
+        <script src="js/app.js"></script>
+
+        <script>
+            // Initialize welcome avatars on menu
+            window.addEventListener("DOMContentLoaded", () => {
+                window.mascotManager.renderMascot(
+                    "welcome-bunny",
+                    "bunny",
+                    "happy",
+                );
+                window.mascotManager.renderMascot(
+                    "welcome-dino",
+                    "dino",
+                    "happy",
+                );
+            });
+        </script>
+    </body>
+</html>
